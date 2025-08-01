@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learnify - Online Learning Platform</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #0077b6;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1581093588401-41fcb3289f47') no-repeat center center/cover;
+      padding: 80px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin: 15px 0;
+    }
+
+    .btn {
+      background: #00b4d8;
+      padding: 12px 25px;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #0096c7;
+    }
+
+    .courses {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .courses h2 {
+      margin-bottom: 30px;
+    }
+
+    .course-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .course {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      width: 250px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .course:hover {
+      transform: scale(1.03);
+    }
+
+    .course img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .course h3 {
+      margin: 10px 0 5px;
+    }
+
+    footer {
+      background: #03045e;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+
+    /* Login Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      text-align: center;
+    }
+
+    .modal-content input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    .close {
+      color: red;
+      float: right;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Learnify</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#courses">Courses</a>
+      <a href="#" onclick="showLogin()">Login</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Start Learning Today!</h1>
+    <p>Join thousands of learners around the world.</p>
+    <a class="btn" href="#courses">Browse Courses</a>
+  </section>
+
+  <section id="courses" class="courses">
+    <h2>Popular Courses</h2>
+    <div class="course-list">
+      <div class="course">
+        <img src="https://source.unsplash.com/250x150/?coding" alt="course">
+        <h3>Web Development</h3>
+        <p>HTML, CSS, JavaScript</p>
+      </div>
+      <div class="course">
+        <img src="https://source.unsplash.com/250x150/?python" alt="course">
+        <h3>Python Programming</h3>
+        <p>Basics to Advanced</p>
+      </div>
+      <div class="course">
+        <img src="https://source.unsplash.com/250x150/?design" alt="course">
+        <h3>UI/UX Design</h3>
+        <p>Figma, Prototyping</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Learnify. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="hideLogin()">&times;</span>
+      <h2>Login</h2>
+      <input type="text" placeholder="Email">
+      <input type="password" placeholder="Password">
+      <br>
+      <a href="#" class="btn" onclick="alert('Login clicked')">Login</a>
+    </div>
+  </div>
+
+  <script>
+    function showLogin() {
+      document.getElementById('loginModal').style.display = 'block';
+    }
+
+    function hideLogin() {
+      document.getElementById('loginModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('loginModal');
+      if (event.target == modal) {
+        hideLogin();
+      }
+    }
+  </script>
+
+</body>
+  </html>
